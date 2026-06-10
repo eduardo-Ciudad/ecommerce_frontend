@@ -85,7 +85,7 @@ export default function AdminProductFormPage() {
     try {
       const payload = {
         name: form.name.trim(),
-        categoryId: Number(form.categoryId),
+        categoryId: form.categoryId,
         description: form.description.trim() || null,
       }
       if (isEditMode) {
