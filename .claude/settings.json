@@ -7,7 +7,8 @@
       "Bash(Remove-Item \"c:\\\\Users\\\\eduar\\\\ecommerce-frontend\\\\src\\\\App.css\" -ErrorAction SilentlyContinue)",
       "Bash(Write-Output \"Removed App.css\")",
       "PowerShell(cd \"c:\\\\Users\\\\eduar\\\\ecommerce-frontend\"; $job = Start-Job { Set-Location \"c:\\\\Users\\\\eduar\\\\ecommerce-frontend\"; npm run dev 2>&1 }; Start-Sleep -Seconds 8; Receive-Job $job; Stop-Job $job; Remove-Job $job)",
-      "PowerShell(cd \"c:\\\\Users\\\\eduar\\\\ecommerce-frontend\"; $job = Start-Job { Set-Location \"c:\\\\Users\\\\eduar\\\\ecommerce-frontend\"; npm run dev 2>&1 }; Start-Sleep -Seconds 7; Receive-Job $job; Stop-Job $job; Remove-Job $job)"
+      "PowerShell(cd \"c:\\\\Users\\\\eduar\\\\ecommerce-frontend\"; $job = Start-Job { Set-Location \"c:\\\\Users\\\\eduar\\\\ecommerce-frontend\"; npm run dev 2>&1 }; Start-Sleep -Seconds 7; Receive-Job $job; Stop-Job $job; Remove-Job $job)",
+      "Bash(Get-Content package.json)"
     ]
   }
 }
