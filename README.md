@@ -1,16 +1,112 @@
-# React + Vite
+# 🛍️ E-commerce Full Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de e-commerce completa com painel administrativo, desenvolvida como projeto de portfólio. Backend em Java com Spring Boot e frontend em React + Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologias
 
-## React Compiler
+### Backend
+- **Java 17** + **Spring Boot 3**
+- **Spring Security** com autenticação **JWT**
+- **PostgreSQL** + **Flyway** (migrations)
+- **Docker**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+- **React** + **Vite**
+- **Tailwind CSS v4**
+- **shadcn/ui**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Funcionalidades
+
+### Loja
+- Listagem e filtragem de produtos
+- Carrinho de compras
+- Fluxo de checkout
+- Autenticação de clientes (registro / login)
+
+### Painel Admin (`/admin`)
+- Gestão de produtos (CRUD)
+- Gestão de pedidos
+- Controle de acesso por roles (`ADMIN` / `USER`)
+
+---
+
+## 🏗️ Arquitetura
+
+```
+ecommerce/
+├── backend/          # Spring Boot API REST
+│   ├── src/
+│   │   ├── controller/
+│   │   ├── service/
+│   │   ├── repository/
+│   │   ├── model/
+│   │   ├── dto/
+│   │   └── security/
+│   └── Dockerfile
+└── frontend/         # React + Vite
+    ├── src/
+    │   ├── pages/
+    │   ├── components/
+    │   └── services/
+    └── ...
+```
+
+---
+
+## ⚙️ Como rodar localmente
+
+### Pré-requisitos
+- Java 17+
+- Node.js 18+
+- Docker e Docker Compose
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/educiudad/ecommerce.git
+cd ecommerce
+```
+
+### 2. Suba o banco com Docker
+```bash
+docker-compose up -d
+```
+
+### 3. Backend
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+
+A API estará disponível em `http://localhost:8080`.
+
+### 4. Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+O frontend estará disponível em `http://localhost:5173`.
+
+---
+
+## 🔐 Variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do backend com:
+
+```env
+DB_URL=jdbc:postgresql://localhost:5432/ecommerce
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+JWT_SECRET=sua_chave_secreta
+```
+
+---
+
+## 👨‍💻 Autor
+
+**Eduardo** — [GitHub](https://github.com/eduardoCiudad) · [LinkedIn](https://linkedin.com/in/educiudad)
